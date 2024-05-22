@@ -30,19 +30,17 @@ namespace CustomerProductListTests
 
         static void TestCustomList()
         {
-            CustomList list = new CustomList();
+            CustomerList list = new CustomerList();
 
             Console.WriteLine("Testing CustomList");
 
             // Test the constructor
             Console.WriteLine("Testing CustomList constructor:");
             Console.WriteLine("Count. Expecting 0. Actual: " + list.Count);
-            Console.WriteLine("IsEmpty. Expecting True. Actual: " + list.IsEmpty);
 
             // Test the Add method
             Console.WriteLine("\nTesting Add method:");
 
-            CustomerList list = new CustomerList();
             Customer p1 = new Customer(1, "example@gmail.com", "Quentin", "Dowco", "123-456-7890");
             Customer p2 = new Customer(2, "example@hotmail.com", "John", "Doe", "431-231-3213");
 
@@ -56,8 +54,42 @@ namespace CustomerProductListTests
             Console.WriteLine("ToString.  Expect two Customers " + list.ToString());
             Console.WriteLine();
 
+            // TestCustomerSave
+            list = new CustomerList();
+            list.Add(p1);
+            list += p2;
+            list.Save();
+            list.Fill();
+            Console.WriteLine("Testing Customer list save and fill.");
+            Console.WriteLine("After Fill Count.  Expecting 2. " + list.Count);
+            Console.WriteLine("ToString.  Expect two Customers " + list.ToString());
+            Console.WriteLine();
+
+            // Test to see if Customers are equal
+            // these 2 objects should be equal.
+            list = new CustomerList();
+            p1 = new Customer(2, "example@hotmail.com", "John", "Doe", "431-231-3213");
+            p2 = new Customer(2, "example@hotmail.com", "John", "Doe", "431-231-3213");
+            Customer p1Reference = p1;
+
+            Console.WriteLine("Testing Customer equals.");
+            Console.WriteLine("2 references to the same object.  Expecting true. " + p1.Equals(p1Reference));
+            Console.WriteLine("2 object that have the same properties should be equal.  Expecting true. " + p1.Equals(p2));
+            Console.WriteLine();
+
             // Test the Remove method
-            
+            // test fails before I add equals to Customer
+            list = new CustomerList();
+            p1 = new Customer(2, "example@hotmail.com", "John", "Doe", "431-231-3213");
+
+            list.Fill();
+            Console.WriteLine("Testing Customer list remove.");
+            Console.WriteLine("Before remove Count.  Expecting 2. " + list.Count);
+            Console.WriteLine("ToString.  Expect two Customers " + list.ToString());
+            list.Remove(p1);
+            Console.WriteLine("After remove Count.  Expecting 1. " + list.Count);
+            Console.WriteLine("ToString.  Expect just Customer 2 " + list.ToString());
+            Console.WriteLine();
 
             // Test any other methods or properties as needed
 
