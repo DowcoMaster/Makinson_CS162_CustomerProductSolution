@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerProductTests", "Makinson_CS162_CustomerProductSolution\CustomerProductTests.csproj", "{0C5765CC-C0C7-4B96-ABB2-6AF2E7629098}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerProductClasses", "CustomerProductClasses\CustomerProductClasses.csproj", "{62235429-7BA1-4F56-8284-9CB93C9D6AF3}"
 EndProject
 Global
@@ -13,10 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0C5765CC-C0C7-4B96-ABB2-6AF2E7629098}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0C5765CC-C0C7-4B96-ABB2-6AF2E7629098}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0C5765CC-C0C7-4B96-ABB2-6AF2E7629098}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0C5765CC-C0C7-4B96-ABB2-6AF2E7629098}.Release|Any CPU.Build.0 = Release|Any CPU
 		{62235429-7BA1-4F56-8284-9CB93C9D6AF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{62235429-7BA1-4F56-8284-9CB93C9D6AF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62235429-7BA1-4F56-8284-9CB93C9D6AF3}.Release|Any CPU.ActiveCfg = Release|Any CPU

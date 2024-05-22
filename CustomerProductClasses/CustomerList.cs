@@ -38,7 +38,7 @@ namespace CustomerProductClasses
             Customers.Add(Customer);
         }
 
-        public void Add(int id, string code, string description, decimal price, int quantity)
+        public void Add(int id, string code, string description, string price, string quantity)
         {
             Customer p = new Customer(id, code, description, price, quantity);
             Customers.Add(p);
