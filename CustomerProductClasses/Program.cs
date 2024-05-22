@@ -13,7 +13,8 @@ namespace CustomerProductListTests
         static void Main(string[] args)
         {
             Console.SetWindowSize(120, 40);
-            TestProductListConstructor();
+            TestCustomList();
+            //TestProductListConstructor();
             //TestProductListAdd();
             //TestProductListSaveAndFill();
             //TestProductListRemove();
@@ -24,6 +25,43 @@ namespace CustomerProductListTests
             //TestProductListIndexer();
 
             Console.ReadLine();
+        }
+        // Assuming CustomList is the name of the class to be tested
+
+        static void TestCustomList()
+        {
+            CustomList list = new CustomList();
+
+            Console.WriteLine("Testing CustomList");
+
+            // Test the constructor
+            Console.WriteLine("Testing CustomList constructor:");
+            Console.WriteLine("Count. Expecting 0. Actual: " + list.Count);
+            Console.WriteLine("IsEmpty. Expecting True. Actual: " + list.IsEmpty);
+
+            // Test the Add method
+            Console.WriteLine("\nTesting Add method:");
+
+            CustomerList list = new CustomerList();
+            Customer p1 = new Customer(1, "example@gmail.com", "Quentin", "Dowco", "123-456-7890");
+            Customer p2 = new Customer(2, "example@hotmail.com", "John", "Doe", "431-231-3213");
+
+            Console.WriteLine("Testing Customer list add.");
+            Console.WriteLine("BEFORE Count.  Expecting 0. " + list.Count);
+            list.Add(p1);
+            Console.WriteLine("AFTER Add Count.  Expecting 1. " + list.Count);
+            Console.WriteLine("ToString.  Expect one Customer " + list.ToString());
+            list += p2;
+            Console.WriteLine("AFTER Second Add Count.  Expecting 2. " + list.Count);
+            Console.WriteLine("ToString.  Expect two Customers " + list.ToString());
+            Console.WriteLine();
+
+            // Test the Remove method
+            
+
+            // Test any other methods or properties as needed
+
+            Console.WriteLine("\nTestCustomList completed.\n");
         }
 
         static void TestProductListConstructor()
