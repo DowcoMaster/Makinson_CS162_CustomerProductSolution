@@ -68,9 +68,9 @@ namespace CustomerProductClasses
             Console.WriteLine("Testing Customer list remove.");
             Console.WriteLine("Before remove Count.  Expecting 2. " + list.Count);
             Console.WriteLine("ToString.  Expect two Customers " + list.ToString());
-            list.Remove(p1);
+            list -= p1;
             Console.WriteLine("After remove Count.  Expecting 1. " + list.Count);
-            Console.WriteLine("ToString.  Expect just Customer 2 " + list.ToString());
+            Console.WriteLine("ToString.  Expect just Customer 1 " + list.ToString());
             Console.WriteLine();
 
             // Test any other methods or properties as needed
