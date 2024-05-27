@@ -109,13 +109,8 @@ namespace CustomerProductClasses
 
         public override int GetHashCode()
         {
-            return 13 + 7 * id.GetHashCode() +
-                7 * email.GetHashCode() +
-                7 * firstname.GetHashCode() +
-                7 * lastName.GetHashCode() +
-                7 * phone.GetHashCode();
+            return HashCode.Combine(Id, Email, FirstName, LastName, Phone);
         }
-
 
         public static bool operator ==(Customer p1, Customer p2)
         {
@@ -124,8 +119,7 @@ namespace CustomerProductClasses
 
         public static bool operator !=(Customer p1, Customer p2)
         {
-            return !p1.Equals(p2);
+            return false;
         }
-
     }
 }
