@@ -15,11 +15,12 @@ class Program
     {
         Console.WriteLine("What would you like to do?");
         Console.WriteLine("1 = Make a new boneyard of Dominos");
-        Console.WriteLine("2 = Draw a Domino from the boneyard");
-        Console.WriteLine("3 = Shuffle the boneyard");
-        Console.WriteLine("4 = Check if the boneyard is empty");
-        Console.WriteLine("5 = Check the number of Dominos remaining in the boneyard");
-        Console.WriteLine("6 = Print the boneyard");
+        Console.WriteLine("2 = Get the number of dominos remaining");
+        Console.WriteLine("3 = Get a domino based on its index in the boneyard");
+        Console.WriteLine("4 = Draw a Domino from the boneyard");
+        Console.WriteLine("5 = Check if the boneyard is empty");
+        Console.WriteLine("6 = Shuffle the boneyard");
+        Console.WriteLine("7 = Print the boneyard");
         int choice = Convert.ToInt32(Console.ReadLine());
         switch (choice)
         {
@@ -29,7 +30,7 @@ class Program
                 boneyard.BoneYard(maxDots);
                 Console.WriteLine("New boneyard created with " + maxDots + " max dots on each side.");
                 break;
-            case 2:
+            case 4:
                 Domino drawnDomino = boneyard.Draw();
                 if (drawnDomino != null)
                 {
@@ -40,11 +41,11 @@ class Program
                     Console.WriteLine("The boneyard is empty and nothing to draw.");
                 }
                 break;
-            case 3:
+            case 6:
                 boneyard.Shuffle();
                 Console.WriteLine("Boneyard shuffled.");
                 break;
-            case 4:
+            case 5:
                 if (boneyard.IsEmpty())
                 {
                     Console.WriteLine("The boneyard is empty.");
@@ -54,11 +55,24 @@ class Program
                     Console.WriteLine("The boneyard is not empty.");
                 }
                 break;
-            case 5:
+            case 2:
                 Console.WriteLine("There are " + boneyard.DominosRemaining + " Dominos remaining in the boneyard.");
                 break;
-            case 6:
+            case 7:
                 Console.WriteLine(boneyard.ToString());
+                break;
+            case 3:
+                Console.WriteLine("Which index would you like to get?");
+                int index = Convert.ToInt32(Console.ReadLine());
+                Domino domino = boneyard[index];
+                if (domino != null)
+                {
+                    Console.WriteLine("The domino at index " + index + " is " + domino.ToString());
+                }
+                else
+                {
+                    Console.WriteLine("There is no domino at index " + index);
+                }
                 break;
             default:
                 Console.WriteLine("Not a valid choice. Please try again.");
